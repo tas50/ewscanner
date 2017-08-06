@@ -131,6 +131,10 @@ def decode_body(resp)
     'Belkin Router'
   when /Webcam Login/
     'Unknown Webcam (possibly generic)'
+  when /NPClient\.html/
+    'Amcrest Webcam'
+  when /PcamEn\.htm/
+    'Pcam Webcam'
   else
     'Unknown webserver'
   end
