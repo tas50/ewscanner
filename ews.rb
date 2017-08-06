@@ -4,7 +4,7 @@ require 'typhoeus'
 
 def decode_body(resp)
   return nil if resp.nil?
-  case resp.body
+  case resp.body.force_encoding(Encoding::UTF_8)
   when /ATEN International Co Ltd/
     'SuperMicro IPMI server'
   when /Welcome to nginx/
