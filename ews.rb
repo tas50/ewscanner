@@ -91,8 +91,8 @@ def decode_body(resp)
     'Unknown DSL modem'
   when /Sicon-8/
     'CircuitWerkes Sicon-8 Remote Controller'
-  when /SCam_2nd.SIS/
-    'Unknown DVR system (possibly generic)'
+  when /SCam_2nd\.SIS|DVR Live View|RSVideoOcx\.cab|CMSPluginInstaller/
+    'Unknown DVR system'
   when /ccwebmail_normal/
     'Codecrafters Ability Mail Webmail'
   when /Barracuda Phone System/
@@ -129,12 +129,22 @@ def decode_body(resp)
     'Mitel PBX'
   when /content="Belkin /
     'Belkin Router'
-  when /Webcam Login/
+  when /Webcam Login|NetSuveillanceWebCookie/
     'Unknown Webcam (possibly generic)'
   when /NPClient\.html/
     'Amcrest Webcam'
   when /PcamEn\.htm/
     'Pcam Webcam'
+  when /doc\/page\/login\.asp\?_/
+    'FOSCAM Security Camera'
+  when /WAMPSERVER/
+    'WAMP web development server'
+  when /Lorex_webplugin\.exe/
+    'Lorex Security Camera'
+  when /The browser you are using may have difficulty receiving images and video/
+    'Dlink DCS Webcam'
+  when /TP-LINK/
+    'TP-LINK Router'
   else
     'Unknown webserver'
   end
